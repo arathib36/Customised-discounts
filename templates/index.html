@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Customised discounts</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+
+	</head>
+	<body>
+	<section class="ftco-section img bg-hero" style= "background-image: url(/static/images/bgpic.jpeg);">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section"></h2>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-lg-11">
+					<div class="wrapper">
+						<div class="row no-gutters justify-content-between">
+							<div class="col-lg-6 d-flex align-items-stretch">
+								<div class="info-wrap w-100 p-5">
+									<h3 class="mb-4">The Brew Crew</h3>
+				        	<div class="dbox w-100 d-flex align-items-start">
+				        		<div class="icon d-flex align-items-center justify-content-center">
+				        			
+				        		</div>
+				        		<div class="text pl-4">
+					            <p><span>S Adithya</span></p>
+					          </div>
+				          </div>
+				        	<div class="dbox w-100 d-flex align-items-start">
+				        		<div class="icon d-flex align-items-center justify-content-center">
+				        			
+				        		</div>
+				        		<div class="text pl-4">
+					            <p><span>TL Vaishnavi</span> </p>
+					          </div>
+				          </div>
+				        	<div class="dbox w-100 d-flex align-items-start">
+				        		<div class="icon d-flex align-items-center justify-content-center">
+				        			
+				        		</div>
+				        		<div class="text pl-4">
+					            <p><span>Arathi B</span> </p>
+					          </div>
+				          </div>
+				        	<div class="dbox w-100 d-flex align-items-start">
+				        		<div class="icon d-flex align-items-center justify-content-center">
+				        			
+				        		</div>
+				        		<div class="text pl-4">
+					            
+					          </div>
+				          </div>
+			          </div>
+							</div>
+
+
+							<div class="col-lg-5">
+								<div class="contact-wrap w-100 p-md-5 p-4">
+									<h3 class="mb-4">Order details</h3>
+									<div id="form-message-warning" class="mb-4"></div> 
+				      		<!-- <div id="form-message-success" class="mb-4">
+				            Your message was sent, thank you!
+				      		</div> -->
+
+
+									<form action="{{ url_for('predict')}}"method="POST" id="contactForm" name="contactForm">
+                  	<div class="row">
+											<div class="col-md-12">
+												<div class="form-group">
+													<input type="text" class="form-control" name="poc_id" id="name" placeholder="POC ID">
+												</div>
+											</div>
+											<div class="col-md-12"> 
+												<div class="form-group">
+                            <select name="product_set" id="email"placeholder="Product set">
+                              
+                              <option value="OW_BULK_JUPILER_JUPILER PILS">OW_BULK_JUPILER_JUPILER PILS</option>
+                              <option value="RETURNABLE_BOTTLE_JUPILER_JUPILER PILS">RETURNABLE_BOTTLE_JUPILER_JUPILER PILS</option>
+                              <option value="RETURNABLE_KEG_JUPILER_JUPILER PILS">RETURNABLE_KEG_JUPILER_JUPILER PILS</option>
+                              <option value="RETURNABLE_BOTTLE_JUPILER_JUPILER 0,0">RETURNABLE_BOTTLE_JUPILER_JUPILER 0,0</option>
+                              <option value="RETURNABLE_BOTTLE_PIEDBOEUF_PIEDBOEUF FONCEE">RETURNABLE_BOTTLE_PIEDBOEUF_PIEDBOEUF FONCEE</option>
+                              <option value="RETURNABLE_BOTTLE_BELLE VUE_BELLE VUE EXTRA KRIEK">RETURNABLE_BOTTLE_BELLE VUE_BELLE VUE EXTRA KRIEK</option>
+                              <option value="RETURNABLE_BOTTLE_HOEGAARDEN_HOEGAARDEN ROSEE">RETURNABLE_BOTTLE_HOEGAARDEN_HOEGAARDEN ROSEE</option>
+                              <option value="RETURNABLE_BOTTLE_LEFFE_FLAVOURED ALCOHOLIC">RETURNABLE_BOTTLE_LEFFE_FLAVOURED ALCOHOLIC</option>
+                              <option value="RETURNABLE_BOTTLE_LEFFE_LEFFE BLONDE">RETURNABLE_BOTTLE_LEFFE_LEFFE BLONDE</option>
+                              <option value="RETURNABLE_BOTTLE_TRIPEL KARMELIET_TRIPEL KARMELIET">RETURNABLE_BOTTLE_TRIPEL KARMELIET_TRIPEL KARMELIET</option>
+                              <option value="RETURNABLE_KEG_HOEGAARDEN_HOEGAARDEN ROSEE">RETURNABLE_KEG_HOEGAARDEN_HOEGAARDEN ROSEE</option>
+                              <option value="RETURNABLE_KEG_HOEGAARDEN_HOEGAARDEN WHITE">RETURNABLE_KEG_HOEGAARDEN_HOEGAARDEN WHITE</option>
+                              <option value="RETURNABLE_KEG_LEFFE_LEFFE BLONDE">RETURNABLE_KEG_LEFFE_LEFFE BLONDE</option>
+                              <option value="RETURNABLE_BOTTLE_STELLA ARTOIS_STELLA ARTOIS REGULAR">RETURNABLE_BOTTLE_STELLA ARTOIS_STELLA ARTOIS REGULAR</option>
+                              <option value="RETURNABLE_BOTTLE_HOEGAARDEN_HOEGAARDEN WHITE">RETURNABLE_BOTTLE_HOEGAARDEN_HOEGAARDEN WHITE</option>
+                              <option value="RETURNABLE_BOTTLE_BELLE VUE_BELLE VUE KRIEK CLASSIQUE">RETURNABLE_BOTTLE_BELLE VUE_BELLE VUE KRIEK CLASSIQUE</option>
+                              <option value="RETURNABLE_KEG_LEFFE_LEFFE BRUNE">RETURNABLE_KEG_LEFFE_LEFFE BRUNE</option>
+                              <option value="RETURNABLE_KEG_STELLA ARTOIS_STELLA ARTOIS REGULAR">RETURNABLE_KEG_STELLA ARTOIS_STELLA ARTOIS REGULAR</option>
+                              <option value="RETURNABLE_KEG_TRIPEL KARMELIET_TRIPEL KARMELIET">RETURNABLE_KEG_TRIPEL KARMELIET_TRIPEL KARMELIET</option>
+                              <option value="RETURNABLE_BOTTLE_LEFFE_LEFFE BRUNE">RETURNABLE_BOTTLE_LEFFE_LEFFE BRUNE</option>
+                              <option value="RETURNABLE_KEG_BELLE VUE_BELLE VUE EXTRA KRIEK">RETURNABLE_KEG_BELLE VUE_BELLE VUE EXTRA KRIEK</option>
+                              <option value="RETURNABLE_KEG_JUPILER_JUPILER BLUE">RETURNABLE_KEG_JUPILER_JUPILER BLUE</option>
+                              <option value="RETURNABLE_KEG_LEFFE_FLAVOURED ALCOHOLIC">RETURNABLE_KEG_LEFFE_FLAVOURED ALCOHOLIC</option>
+                              <option value="RETURNABLE_BOTTLE_HOEGAARDEN_HOEG RADLER LEMON 0,0">RETURNABLE_BOTTLE_HOEGAARDEN_HOEG RADLER LEMON 0,0</option>
+                              <option value="RETURNABLE_BOTTLE_HOEGAARDEN_HOEGAARDEN ROSE 0,0">RETURNABLE_BOTTLE_HOEGAARDEN_HOEGAARDEN ROSE 0,0</option>
+                              <option value="RETURNABLE_BOTTLE_HOEGAARDEN_HOEGAARDEN JULIUS">RETURNABLE_BOTTLE_HOEGAARDEN_HOEGAARDEN JULIUS</option>
+                              <option value="RETURNABLE_BOTTLE_KWAK_KWAK">RETURNABLE_BOTTLE_KWAK_KWAK</option>
+                              <option value="RETURNABLE_BOTTLE_LEFFE_LEFFE">RETURNABLE_BOTTLE_LEFFE_LEFFE</option>
+                              <option value="RETURNABLE_BOTTLE_LEFFE_LEFFE ROYALE">RETURNABLE_BOTTLE_LEFFE_LEFFE ROYALE</option>
+                              <option value="RETURNABLE_BOTTLE_LEFFE_LEFFE RUBY">RETURNABLE_BOTTLE_LEFFE_LEFFE RUBY</option>
+                              <option value="RETURNABLE_BOTTLE_LEFFE_LEFFE SANS ALCOOL/ALCOHOLVRIJ">RETURNABLE_BOTTLE_LEFFE_LEFFE SANS ALCOOL/ALCOHOLVRIJ</option>
+                              <option value="RETURNABLE_BOTTLE_LEFFE_LEFFE TRIPLE">RETURNABLE_BOTTLE_LEFFE_LEFFE TRIPLE</option>
+                              <option value="RETURNABLE_KEG_SCOTCH CTS_SCOTCH CTS">RETURNABLE_KEG_SCOTCH CTS_SCOTCH CTS</option>
+                              <option value="RETURNABLE_PERFECTDRAFT_LEFFE_LEFFE BLONDE">RETURNABLE_PERFECTDRAFT_LEFFE_LEFFE BLONDE</option>
+                              <option value="RETURNABLE_PERFECTDRAFT_LEFFE_LEFFE BRUNE">RETURNABLE_PERFECTDRAFT_LEFFE_LEFFE BRUNE</option>
+                              <option value="OW_CAN_JUPILER_JUPILER PILS">OW_CAN_JUPILER_JUPILER PILS</option>
+                              <option value="RETURNABLE_BOTTLE_HOEGAARDEN_HOEGAARDEN BEATRIX">RETURNABLE_BOTTLE_HOEGAARDEN_HOEGAARDEN BEATRIX</option>
+                              <option value="RETURNABLE_BOTTLE_HOEGAARDEN_HOEGAARDEN YELLOW">RETURNABLE_BOTTLE_HOEGAARDEN_HOEGAARDEN YELLOW</option>
+                              <option value="RETURNABLE_BOTTLE_JUPILER_JUPILER BLUE">RETURNABLE_BOTTLE_JUPILER_JUPILER BLUE</option>
+                              <option value="RETURNABLE_BOTTLE_PURE BLONDE_PURE BLONDE REGULAR">RETURNABLE_BOTTLE_PURE BLONDE_PURE BLONDE REGULAR</option>
+                              <option value="RETURNABLE_BOTTLE_SCOTCH CTS_SCOTCH CTS">RETURNABLE_BOTTLE_SCOTCH CTS_SCOTCH CTS</option>
+                              <option value="RETURNABLE_KEG_PURE BLONDE_PURE BLONDE REGULAR">RETURNABLE_KEG_PURE BLONDE_PURE BLONDE REGULAR</option>
+                              <option value="RETURNABLE_BOTTLE_BASS_BASS PALE ALE">RETURNABLE_BOTTLE_BASS_BASS PALE ALE</option>
+                              <option value="RETURNABLE_BOTTLE_LEFFE_LEFFE RITUEL 9░">RETURNABLE_BOTTLE_LEFFE_LEFFE RITUEL 9░</option>
+                              <option value="RETURNABLE_PERFECTDRAFT_HOEGAARDEN_HOEGAARDEN WHITE">RETURNABLE_PERFECTDRAFT_HOEGAARDEN_HOEGAARDEN WHITE</option>
+                              <option value="RETURNABLE_PERFECTDRAFT_STELLA ARTOIS_STELLA ARTOIS REGULAR">RETURNABLE_PERFECTDRAFT_STELLA ARTOIS_STELLA ARTOIS REGULAR</option>
+                              <option value="RETURNABLE_BOTTLE_HOEGAARDEN_HOEGAARDEN 0,0">RETURNABLE_BOTTLE_HOEGAARDEN_HOEGAARDEN 0,0</option>
+                              <option value="OW_BOTTLE_STELLA ARTOIS_STELLA ARTOIS REGULAR">OW_BOTTLE_STELLA ARTOIS_STELLA ARTOIS REGULAR</option>
+                              <option value="RETURNABLE_BOTTLE_HOEGAARDEN_HOEGAARDEN FORBIDDEN FRUIT">RETURNABLE_BOTTLE_HOEGAARDEN_HOEGAARDEN FORBIDDEN FRUIT</option>
+                              <option value="RETURNABLE_BOTTLE_LEFFE_LEFFE ROYALE CASCADE IPA">RETURNABLE_BOTTLE_LEFFE_LEFFE ROYALE CASCADE IPA</option>
+                              <option value="RETURNABLE_KEG_LEFFE_LEFFE ROYALE CASCADE IPA">RETURNABLE_KEG_LEFFE_LEFFE ROYALE CASCADE IPA</option>
+                              <option value="RETURNABLE_KEG_LEFFE_LEFFE RUBY">RETURNABLE_KEG_LEFFE_LEFFE RUBY</option>
+                              <option value="OW_BOTTLE_CORONA_CORONA EXTRA">OW_BOTTLE_CORONA_CORONA EXTRA</option>
+                              <option value="OW_BOTTLE_GOOSE ISLAND_GOOSE ISLAND IPA">OW_BOTTLE_GOOSE ISLAND_GOOSE ISLAND IPA</option>
+                              <option value="RETURNABLE_BOTTLE_BECK'S_BECK'S REGULAR">RETURNABLE_BOTTLE_BECK'S_BECK'S REGULAR</option>
+                              <option value="RETURNABLE_BOTTLE_HORSE ALE_HORSE ALE">RETURNABLE_BOTTLE_HORSE ALE_HORSE ALE</option>
+                              <option value="RETURNABLE_KEG_HOEGAARDEN_HOEGAARDEN JULIUS">RETURNABLE_KEG_HOEGAARDEN_HOEGAARDEN JULIUS</option>
+                              <option value="RETURNABLE_KEG_LEFFE_LEFFE">RETURNABLE_KEG_LEFFE_LEFFE</option>
+                              <option value="OW_BOTTLE_GINETTE_ GINETTE LAGER">OW_BOTTLE_GINETTE_ GINETTE LAGER</option>
+                              <option value="OW_BOTTLE_GINETTE_GINETTE BLONDE">OW_BOTTLE_GINETTE_GINETTE BLONDE</option>
+                              <option value="OW_BOTTLE_GINETTE_GINETTE TRIPEL">OW_BOTTLE_GINETTE_GINETTE TRIPEL</option>
+                              <option value="OW_CAN_HOEGAARDEN_HOEGAARDEN WHITE">OW_CAN_HOEGAARDEN_HOEGAARDEN WHITE</option>
+                              <option value="OW_CAN_LEFFE_LEFFE BLONDE">OW_CAN_LEFFE_LEFFE BLONDE</option>
+                              <option value="OW_CAN_STELLA ARTOIS_STELLA ARTOIS REGULAR">OW_CAN_STELLA ARTOIS_STELLA ARTOIS REGULAR</option>
+                              <option value="RETURNABLE_KEG_GINETTE_ GINETTE LAGER">RETURNABLE_KEG_GINETTE_ GINETTE LAGER</option>
+                              <option value="RETURNABLE_KEG_KWAK_KWAK">RETURNABLE_KEG_KWAK_KWAK</option>
+                              <option value="RETURNABLE_BOTTLE_HOEGAARDEN_HOEGAARDEN GRAND CRU">RETURNABLE_BOTTLE_HOEGAARDEN_HOEGAARDEN GRAND CRU</option>
+                              <option value="RETURNABLE_BOTTLE_LEFFE_LEFFE RADIEUSE">RETURNABLE_BOTTLE_LEFFE_LEFFE RADIEUSE</option>
+                              <option value="RETURNABLE_PERFECTDRAFT_JUPILER_JUPILER PILS">RETURNABLE_PERFECTDRAFT_JUPILER_JUPILER PILS</option>
+                              <option value="RETURNABLE_PERFECTDRAFT_LEFFE_FLAVOURED ALCOHOLIC">RETURNABLE_PERFECTDRAFT_LEFFE_FLAVOURED ALCOHOLIC</option>
+                              <option value="RETURNABLE_PERFECTDRAFT_LEFFE_LEFFE ROYALE">RETURNABLE_PERFECTDRAFT_LEFFE_LEFFE ROYALE</option>
+                              <option value="RETURNABLE_BOTTLE_VIEUX TEMPS_VIEUX TEMPS REGULAR">RETURNABLE_BOTTLE_VIEUX TEMPS_VIEUX TEMPS REGULAR</option>
+                              <option value="RETURNABLE_BOTTLE_BELLE VUE_BELLE VUE GUEUZE">RETURNABLE_BOTTLE_BELLE VUE_BELLE VUE GUEUZE</option>
+                              <option value="RETURNABLE_KEG_CUBANISTO_CUBANISTO RUM">RETURNABLE_KEG_CUBANISTO_CUBANISTO RUM</option>
+                              <option value="RETURNABLE_BOTTLE_PIEDBOEUF_PIEDBOEUF TRIPLE">RETURNABLE_BOTTLE_PIEDBOEUF_PIEDBOEUF TRIPLE</option>
+                              <option value="OW_BOTTLE_CUBANISTO_CUBANISTO RUM">OW_BOTTLE_CUBANISTO_CUBANISTO RUM</option>
+                              <option value="RETURNABLE_BOTTLE_PIEDBOEUF_PIEDBOEUF BLONDE">RETURNABLE_BOTTLE_PIEDBOEUF_PIEDBOEUF BLONDE</option>
+                              <option value="RETURNABLE_KEG_HOEGAARDEN_HOEGAARDEN GRAND CRU">RETURNABLE_KEG_HOEGAARDEN_HOEGAARDEN GRAND CRU</option>
+                              <option value="RETURNABLE_PERFECTDRAFT_LEFFE_LEFFE">RETURNABLE_PERFECTDRAFT_LEFFE_LEFFE</option>
+                              <option value="RETURNABLE_PERFECTDRAFT_LEFFE_LEFFE RUBY">RETURNABLE_PERFECTDRAFT_LEFFE_LEFFE RUBY</option>
+                              <option value="OW_CAN_HOEGAARDEN_HOEGAARDEN 0,0">OW_CAN_HOEGAARDEN_HOEGAARDEN 0,0</option>
+                              <option value="OW_CAN_JUPILER_JUPILER 0,0">OW_CAN_JUPILER_JUPILER 0,0</option>
+                              <option value="RETURNABLE_BOTTLE_KRUGER_KRUGER EXPORT">RETURNABLE_BOTTLE_KRUGER_KRUGER EXPORT</option>
+                              <option value="OW_CAN_LEFFE_LEFFE BRUNE">OW_CAN_LEFFE_LEFFE BRUNE</option>
+                              <option value="RETURNABLE_KEG_DIEKIRCH_DIEKIRCH PILS">RETURNABLE_KEG_DIEKIRCH_DIEKIRCH PILS</option>
+                              <option value="RETURNABLE_KEG_DIEKIRCH_DIEKIRCH XMAS BEER">RETURNABLE_KEG_DIEKIRCH_DIEKIRCH XMAS BEER</option>
+                              <option value="OW_CAN_CUBANISTO_CUBANISTO RUM">OW_CAN_CUBANISTO_CUBANISTO RUM</option>
+                              <option value="RETURNABLE_PERFECTDRAFT_HOEGAARDEN_HOEGAARDEN ROSEE">RETURNABLE_PERFECTDRAFT_HOEGAARDEN_HOEGAARDEN ROSEE</option>
+                              <option value="RETURNABLE_BOTTLE_GINDER-ALE_GINDER-ALE">RETURNABLE_BOTTLE_GINDER-ALE_GINDER-ALE</option>
+                              <option value="OW_CAN_HOEGAARDEN_ HOEGAARDEN RADLER AGRUM 0,0">OW_CAN_HOEGAARDEN_ HOEGAARDEN RADLER AGRUM 0,0</option>
+                              <option value="RETURNABLE_BOTTLE_LEFFE_LEFF NECT">RETURNABLE_BOTTLE_LEFFE_LEFF NECT</option>
+                              <option value="RETURNABLE_BOTTLE_DIEKIRCH_DIEKIRCH GRAND CRU">RETURNABLE_BOTTLE_DIEKIRCH_DIEKIRCH GRAND CRU</option>
+                              <option value="OW_CAN_HOEGAARDEN_HOEGAARDEN ROSE 0,0">OW_CAN_HOEGAARDEN_HOEGAARDEN ROSE 0,0</option>
+                              <option value="OW_CAN_HOEGAARDEN_HOEGAARDEN ROSEE">OW_CAN_HOEGAARDEN_HOEGAARDEN ROSEE</option>
+                              <option value="OW_CAN_LEFFE_LEFFE SANS ALCOOL/ALCOHOLVRIJ">OW_CAN_LEFFE_LEFFE SANS ALCOOL/ALCOHOLVRIJ</option>
+                              <option value="OW_BULK_STELLA ARTOIS_STELLA ARTOIS REGULAR">OW_BULK_STELLA ARTOIS_STELLA ARTOIS REGULAR</option>
+                              <option value="RETURNABLE_BOTTLE_SAFIR_SAFIR REGULAR">RETURNABLE_BOTTLE_SAFIR_SAFIR REGULAR</option>
+                              <option value="RETURNABLE_KEG_GOOSE ISLAND_GOOSE ISLAND IPA">RETURNABLE_KEG_GOOSE ISLAND_GOOSE ISLAND IPA</option>
+                              <option value="OW_CAN_BELLE VUE_BELLE VUE EXTRA KRIEK">OW_CAN_BELLE VUE_BELLE VUE EXTRA KRIEK</option>
+                              <option value="OW_CAN_HOEGAARDEN_HOEG RADLER LEMON 0,0">OW_CAN_HOEGAARDEN_HOEG RADLER LEMON 0,0</option>
+                              <option value="RETURNABLE_BOTTLE_LEFFE_LEFFE MIXED">RETURNABLE_BOTTLE_LEFFE_LEFFE MIXED</option>
+                              <option value="RETURNABLE_KEG_SAFIR_SAFIR REGULAR">RETURNABLE_KEG_SAFIR_SAFIR REGULAR</option>
+                              <option value="OW_BOTTLE_CUBANISTO_CUBANISTO PHENOMENAL">OW_BOTTLE_CUBANISTO_CUBANISTO PHENOMENAL</option>
+                              <option value="OW_BOTTLE_GINETTE_GINETTE BLANCHE">OW_BOTTLE_GINETTE_GINETTE BLANCHE</option>
+                              <option value="OW_BOTTLE_GINETTE_GINETTE FRUIT">OW_BOTTLE_GINETTE_GINETTE FRUIT</option>
+                              <option value="OW_BOTTLE_LEFFE_LEFFE RITUEL 9░">OW_BOTTLE_LEFFE_LEFFE RITUEL 9░</option>
+                              <option value="OW_CAN_JUPILER_JUPILER BLUE">OW_CAN_JUPILER_JUPILER BLUE</option>
+                              <option value="OW_BOTTLE_BIRRA DEL BORGO_BIRRA DEL BORGO CASTAGNALE">OW_BOTTLE_BIRRA DEL BORGO_BIRRA DEL BORGO CASTAGNALE</option>
+                              <option value="RETURNABLE_PERFECTDRAFT_LEFFE_LEFFE ROYALE CASCADE IPA">RETURNABLE_PERFECTDRAFT_LEFFE_LEFFE ROYALE CASCADE IPA</option>
+                              <option value="OW_BOTTLE_TRIPEL KARMELIET_TRIPEL KARMELIET">OW_BOTTLE_TRIPEL KARMELIET_TRIPEL KARMELIET</option>
+                              <option value="RETURNABLE_PERFECTDRAFT_TRIPEL KARMELIET_TRIPEL KARMELIET">RETURNABLE_PERFECTDRAFT_TRIPEL KARMELIET_TRIPEL KARMELIET</option>
+                              <option value="OW_BOTTLE_LEFFE_LEFFE BRUNE">OW_BOTTLE_LEFFE_LEFFE BRUNE</option>
+                              <option value="RETURNABLE_KEG_JUPILER_JUPILER 0,0">RETURNABLE_KEG_JUPILER_JUPILER 0,0</option>
+                              <option value="RETURNABLE_PERFECTDRAFT_KWAK_KWAK">RETURNABLE_PERFECTDRAFT_KWAK_KWAK</option>
+                              <option value="OW_BOTTLE_JUPILER_JUPILER PILS">OW_BOTTLE_JUPILER_JUPILER PILS</option>
+                              <option value="OW_CAN_BELLE VUE_BELLE VUE KRIEK CLASSIQUE">OW_CAN_BELLE VUE_BELLE VUE KRIEK CLASSIQUE</option>
+                              <option value="RETURNABLE_PERFECTDRAFT_LEFFE_LEFFE RITUEL 9░">RETURNABLE_PERFECTDRAFT_LEFFE_LEFFE RITUEL 9░</option>
+                              <option value="RETURNABLE_KEG_GINETTE_GINETTE BLANCHE">RETURNABLE_KEG_GINETTE_GINETTE BLANCHE</option>
+                              <option value="OW_BOTTLE_DEUS_DEUS">OW_BOTTLE_DEUS_DEUS</option>
+                              <option value="OW_BOTTLE_LEFFE_LEFFE BLONDE">OW_BOTTLE_LEFFE_LEFFE BLONDE</option>
+                              <option value="OW_BOTTLE_LEFFE_LEFFE ROYALE CASCADE IPA">OW_BOTTLE_LEFFE_LEFFE ROYALE CASCADE IPA</option>
+                              <option value="RETURNABLE_KEG_GINETTE_GINETTE FRUIT">RETURNABLE_KEG_GINETTE_GINETTE FRUIT</option>
+                              <option value="OW_BULK_PURE BLONDE_PURE BLONDE REGULAR">OW_BULK_PURE BLONDE_PURE BLONDE REGULAR</option>
+                              <option value="OW_CAN_LEFFE_LEFFE RUBY">OW_CAN_LEFFE_LEFFE RUBY</option>
+                              <option value="OW_BOTTLE_LEFFE_LEFFE ROYALE">OW_BOTTLE_LEFFE_LEFFE ROYALE</option>
+                              <option value="RETURNABLE_BOTTLE_DIEKIRCH_DIEKIRCH PILS">RETURNABLE_BOTTLE_DIEKIRCH_DIEKIRCH PILS</option>
+                              <option value="OW_BULK_LEFFE_LEFFE BLONDE">OW_BULK_LEFFE_LEFFE BLONDE</option>
+                              <option value="OW_BOTTLE_LEFFE_LEFFE RUBY">OW_BOTTLE_LEFFE_LEFFE RUBY</option>
+                              <option value="OW_BOTTLE_GOOSE ISLAND_GOOS 312">OW_BOTTLE_GOOSE ISLAND_GOOS 312</option>
+                              <option value="OW_BOTTLE_LEFFE_LEFFE ROYALE IPA">OW_BOTTLE_LEFFE_LEFFE ROYALE IPA</option>
+                              <option value="OW_CAN_PURE BLONDE_PURE BLONDE REGULAR">OW_CAN_PURE BLONDE_PURE BLONDE REGULAR</option>
+                              <option value="RETURNABLE_KEG_GOOSE ISLAND_GOOS 312">RETURNABLE_KEG_GOOSE ISLAND_GOOS 312</option>
+                              <option value="OW_BOTTLE_LEFFE_LEFFE TRIPLE">OW_BOTTLE_LEFFE_LEFFE TRIPLE</option>
+                              <option value="OW_BOTTLE_KWAK_KWAK">OW_BOTTLE_KWAK_KWAK</option>
+                              <option value="RETURNABLE_KEG_GOOSE ISLAND_GOOSE ISLAND MIDWAY IPA">RETURNABLE_KEG_GOOSE ISLAND_GOOSE ISLAND MIDWAY IPA</option>
+                              <option value="RETURNABLE_BOTTLE_LEFFE_LEFFE ROYALE MAPUCHE">RETURNABLE_BOTTLE_LEFFE_LEFFE ROYALE MAPUCHE</option>
+                              <option value="OW_BOTTLE_BELLE VUE_BELLE VUE GUEUZE">OW_BOTTLE_BELLE VUE_BELLE VUE GUEUZE</option>
+                              <option value="NA"></option>                              
+
+
+                            </select>
+												</div>
+											</div>
+											<div class="col-md-12">
+												<div class="form-group">
+													<input type="text" class="form-control" name="volume" id="subject" placeholder="Volume">
+												</div>
+											</div>
+
+											<div class="col-md-12">
+												<div class="form-group">
+                          <button type="submit" class="btn btn-primary btn-block btn-large" value="Send Message">Proceed</button>
+													<div class="submitting"></div>
+												</div>
+											</div>
+										</div>
+									</form>
+
+                 {{ prediction_text }}
+                 {{ prediction_text2 }}
+
+
+
+								</div>
+							</div>
+
+
+  					</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	</body>
+</html>
+
