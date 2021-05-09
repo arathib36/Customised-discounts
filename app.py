@@ -3,6 +3,7 @@ from flask import Flask, request, jsonify, render_template
 import pickle
 import sklearn
 import pandas as pd
+from flask import Markup
 
 
 app = Flask(__name__)
@@ -72,11 +73,16 @@ def predict():
     elif(poc_tier == 'Tier 2'):
         total_discount+=2.5
 
+    if(total_discount>60):
+        total_discount = 60
+
     output = total_discount
+    # return render_template('my_other_template.html', 
+    #                    firstname=firstname,
+    #                    lastname=lastname,
+    #                    cellphone=cellphone)
 
-    #TIER ANALYSIS
-
-    return render_template('index.html', prediction_text='Total Discount percentage {}'.format(output))
+    return render_template('index.html',prediction_text=' OnInvoice Discount percentage : {} <br> OffInvoice perc : {} <br> Total Discount percentage : {}'.format(oninvoice*100,offinvoice*100,output))
 
 
 if __name__ == "__main__":

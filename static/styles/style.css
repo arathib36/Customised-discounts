@@ -34,6 +34,11 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
+#dropdown_ps{
+  border:0px;
+  outline:0px;
+}
+
 html {
   font-family: sans-serif;
   line-height: 1.15;
