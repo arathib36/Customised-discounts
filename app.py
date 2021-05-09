@@ -45,6 +45,7 @@ def predict():
         print(temp.head())
         poc_rating = temp['Final_POC_Rating'].iloc[0]
         subsegment_rating = temp['POC_subsegement_rating'].iloc[0]
+        poc_tier = temp['sfdc_tier'].iloc[0]
 
         temp = df_sku_ratings.loc[df_sku_ratings['Product Set']==product_set]
         temp = temp.reset_index()
@@ -66,8 +67,14 @@ def predict():
     total_discount = oninvoice*100 + offinvoice*100
 
     #Tier analysis
+    if(poc_tier == 'Tier 0'):
+        total_discount+=3.5
+    elif(poc_tier == 'Tier 2'):
+        total_discount+=2.5
 
     output = total_discount
+
+    #TIER ANALYSIS
 
     return render_template('index.html', prediction_text='Total Discount percentage {}'.format(output))
 

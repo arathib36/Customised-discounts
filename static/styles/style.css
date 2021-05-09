@@ -6491,7 +6491,7 @@ button.bg-dark:focus {
   width: 75% !important; }
 
 .w-100 {
-  width: 200% !important; }
+  width: 170% !important; }
 
 .w-auto {
   width: auto !important; }
@@ -8159,7 +8159,7 @@ h1, h2, h3, h4, h5,
   background: #1089ff !important; }
 
 .ftco-section {
-  padding: 7em 0; }
+  padding: 12em 0; }
 
 .ftco-no-pt {
   padding-top: 0; }
