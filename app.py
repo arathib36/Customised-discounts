@@ -44,27 +44,34 @@ def predict():
         temp = df_poc_ratings.loc[df_poc_ratings['Ship-to ID']==poc_id]
         temp = temp.reset_index()
         print(temp.head())
-        poc_rating = temp['Final_POC_Rating'].iloc[0]
-        subsegment_rating = temp['POC_subsegement_rating'].iloc[0]
-        poc_tier = temp['sfdc_tier'].iloc[0]
+        if(temp.empty):
+            poc_rating = 0
+            subsegment_rating = 0
+            poc_tier = 0
+        else:
+            poc_rating = temp['Final_POC_Rating'].iloc[0]                      #POC Rating
+            subsegment_rating = temp['POC_subsegement_rating'].iloc[0]         #Sub-segment Rating
+            poc_tier = temp['sfdc_tier'].iloc[0]                               #Tier of POC
 
         temp = df_sku_ratings.loc[df_sku_ratings['Product Set']==product_set]
         temp = temp.reset_index()
         print(temp.head())
-        sku_rating = temp['Final_SKU'].iloc[0]
+        sku_rating = temp['Final_SKU'].iloc[0]                             #SKU Rating
 
-        temp = df_offinvoice_discount.loc[df_offinvoice_discount['Ship-to ID']==poc_id]
-        temp = temp.reset_index()
-        print(temp.head())
-        offinvoice = temp['Final_OffInvoice_discount_perc'].iloc[0]
-        
+
         oninvoice = model.predict(np.asarray([[poc_rating,sku_rating,volume,subsegment_rating]]))
 
     
-    temp = df_offinvoice_discount.loc[df_offinvoice_discount['Ship-to ID']==poc_id]
+    temp = df_offinvoice_discount.loc[df_offinvoice_discount['Ship-to ID']==poc_id]  #OffInvoice discount perc
     temp = temp.reset_index()
     print(temp.head())
-    offinvoice = temp['Final_OffInvoice_discount_perc'].iloc[0]
+    if(temp.empty):
+        offinvoice = 0
+    else:
+        offinvoice = temp['Final_OffInvoice_discount_perc'].iloc[0]
+
+
+
     total_discount = oninvoice*100 + offinvoice*100
 
     #Tier analysis
