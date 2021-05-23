@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" />
+    <link href="fontawesome/css/all.min.css" rel="stylesheet" />
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/tempcss.css') }}">
+    <title>Profile</title>
+<!--
+
+Comparto TemplateMo
+
+https://templatemo.com/tm-544-comparto
+
+-->
+</head>
+<div class="bg-image" ></div>
+<body style="background-image: url(/static/images/newbg.jpeg);" class="bg-hero">
+    <!-- Back to top button -->
+    <a id="button"><i class="fas fa-angle-up fa-2x"></i></a>
+    <div class="container-fluid">
+        <div class="tm-site-header tm-mb-1">
+            <div class="tm-site-name-container tm-bg-color-1">
+                <div style="color:white;">POC ID</div>
+                <h1 class="tm-text-white">
+                    {% autoescape false %}
+                    {{pocid}}
+                    {% endautoescape %}
+                </h1>
+            </div>
+            <div class="tm-nav-container tm-bg-color-8">
+                <nav class="tm-nav" id="tm-nav">
+                    <ul>
+                        <!-- <li class="tm-nav-item current">
+                            <a href="#about" class="tm-nav-link">
+                                <span class="tm-mb-1">TIER</span>
+                                <span>
+                                    {% autoescape false %}
+                                    {{tier}}
+                                    {% endautoescape %}
+                                </span>
+                            </a>
+                        </li> -->
+                        <li class="tm-nav-item">
+                            <a href="#" class="tm-nav-link">
+                                <span class="tm-mb-1">POC RATING</span>
+                                <span class="inner-details">
+                                    {% autoescape false %}
+                                    {{pocrating}}
+                                    {% endautoescape %}      
+                                    <br>
+                                    <meter id="myMeter_poc" value = {{pocrating}} min="0" max="0.5">2 out of 10</meter><br>
+                                    <script>
+                                          document.getElementById("myMeter_poc").value = parseFloat(pocrating);
+                                    </script>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="tm-nav-item">
+                            <a href="#gallery" class="tm-nav-link">
+                                <span class="tm-mb-1">SKU RATING</span>
+                                <span class="inner-details">
+                                    {% autoescape false %}
+                                    {{skurating}}
+                                    {% endautoescape %}
+                                    <br>
+
+                                    <meter id="myMeter_sku" value = {{skurating}}) min="-0.3" max="1.5">2 out of 10</meter><br>
+                                    <!-- <script>
+                                          document.getElementById("myMeter_sku").value = parseFloat(
+                                        //   parseFloat(pocrating);
+                                    </script> -->
+                                </span>
+                            </a>
+                        </li>
+                        <li class="tm-nav-item">
+                            <a href="#contact" class="tm-nav-link">
+                                <span class="tm-nav-text tm-mb-1">TIER</span>
+                                <span class="tm-nav-text inner-details">
+                                    {% autoescape false %}
+                                    {{tier}}
+                                    {% endautoescape %}
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!-- <section class="tm-mb-1" id="about">
+            <div class="tm-row tm-about-row">
+                <div class="tm-section-1-l">
+                    <img src="img/comparto-image-01.jpg" alt="About image" class="tm-img-responsive">
+        </section> -->
+        <div class="tm-bg-color-1 tm-mb-1 tm-row tm-social-row">
+            <div class="tm-icon">
+                <div class="tm-icon-inner">
+                    <a href="#services">
+                        <i class="fas fa-synagogue fa-4x tm-mb-1"></i>
+                        <p>On-Invoice Discount percentage</p>
+                        
+                        <div id="discount-box">
+                            {% autoescape false %}
+                            {{oninvoice}}
+                            {% endautoescape %}
+                            %
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="tm-icon">
+                <div class="tm-icon-inner">
+                    <a href="#gallery">
+                        <i class="fas fa-chart-bar fa-4x tm-mb-1"></i>
+                        <p>Off-Invoice Discount percentage</p>
+                        
+                        <div id="discount-box">
+                            {% autoescape false %}
+                            {{offinvoice}}
+                            {% endautoescape %}
+                            %
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="tm-icon">
+                <div class="tm-icon-inner">
+                    <a href="#contact">
+                        <i class="fas fa-images fa-4x tm-mb-1"></i>
+                        <p>Total Discount percentage</p>
+                        <div id="discount-box">
+                            {% autoescape false %}
+                            {{totaldiscount}}
+                            {% endautoescape %}
+                            %
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <section class="tm-mb-1 tm-row tm-services-row" id="services">
+            <div class="tm-section-2-l">
+                <article class="tm-bg-color-6 tm-box-pad tm-mb-1">
+                    <h1 class="prevorder">Previous orders</h1>
+                    <br>
+                    <div class="scrollpage">
+                    {% autoescape false %}
+                    {{prevrecords}}
+                    {% endautoescape %}
+                    </div>
+                </article>
+            </div>
+            <!-- <div class="tm-section-2-r">
+                <img src="img/comparto-image-02.jpg" alt="Services image" class="tm-img-responsive">
+            </div> -->
+        </section>
+    </div> <!-- .container -->
+    <script src="js/jquery.min.js"></script> <!-- https://jquery.com/download/ -->
+    <script src="js/imagesloaded.pkgd.min.js"></script> <!-- https://imagesloaded.desandro.com/ -->
+    <script src="js/isotope.pkgd.min.js"></script> <!-- https://isotope.metafizzy.co/ -->
+    <script src="js/jquery.singlePageNav.min.js"></script> <!-- https://github.com/ChrisWojcik/single-page-nav -->
+    <script>
+
+        // Scroll to Top button
+        var btn = $('#button');
+
+        $(window).scroll(function () {
+            if ($(window).scrollTop() > 300) {
+                btn.addClass('show');
+            } else {
+                btn.removeClass('show');
+            }
+        });
+
+        btn.on('click', function (e) {
+            e.preventDefault();
+            $('html, body').animate({ scrollTop: 0 }, '300');
+        });
+
+        // DOM is ready
+        $(function () {
+            // Single Page Nav
+            $('#tm-nav').singlePageNav({ speed: 600 });
+
+            // Smooth Scroll (https://css-tricks.com/snippets/jquery/smooth-scrolling/)
+            $('a[href*="#"]')
+                // Remove links that don't actually link to anything
+                .not('[href="#"]')
+                .not('[href="#0"]')
+                .click(function (event) {
+                    // On-page links
+                    if (
+                        location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+                        &&
+                        location.hostname == this.hostname
+                    ) {
+                        // Figure out element to scroll to
+                        var target = $(this.hash);
+                        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                        // Does a scroll target exist?
+                        if (target.length) {
+                            // Only prevent default if animation is actually gonna happen
+                            event.preventDefault();
+                            $('html, body').animate({
+                                scrollTop: target.offset().top
+                            }, 600, function () {
+                                // Callback after animation
+                                // Must change focus!
+                                var $target = $(target);
+                                $target.focus();
+                                if ($target.is(":focus")) { // Checking if the target was focused
+                                    return false;
+                                } else {
+                                    $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
+                                    $target.focus(); // Set focus again
+                                };
+                            });
+                        }
+                    }
+                });
+
+            /* Isotope Gallery */
+
+            // init isotope
+            var $gallery = $(".tm-gallery").isotope({
+                itemSelector: ".tm-gallery-item",
+                layoutMode: "fitRows"
+            });
+            // layout Isotope after each image loads
+            $gallery.imagesLoaded().progress(function () {
+                $gallery.isotope("layout");
+            });
+
+            $(".filters-button-group").on("click", "a", function () {
+                var filterValue = $(this).attr("data-filter");
+                $gallery.isotope({ filter: filterValue });
+            });
+
+            $(".tabgroup > div").hide();
+            $(".tabgroup > div:first-of-type").show();
+            $(".tabs a").click(function (e) {
+                e.preventDefault();
+                var $this = $(this),
+                    tabgroup = "#" + $this.parents(".tabs").data("tabgroup"),
+                    others = $this
+                        .closest("li")
+                        .siblings()
+                        .children("a"),
+                    target = $this.attr("href");
+                others.removeClass("active");
+                $this.addClass("active");
+            });
+        });
+    </script>
+</body>
+</html>
